@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <!-- Building blocks -->
+    <link rel="stylesheet" href="style/action_menu.css">
+    <link rel="stylesheet" href="style/buttons.css">
+    <link rel="stylesheet" href="style/confirm.css">
+    <link rel="stylesheet" href="style/edit_mode.css">
+    <link rel="stylesheet" href="style/headers.css">
+    <link rel="stylesheet" href="style/input_areas.css">
+    <link rel="stylesheet" href="style/status.css">
+    <link rel="stylesheet" href="style/switches.css">
+    <link rel="stylesheet" href="style/drawer.css">
+    <link rel="stylesheet" href="style/lists.css">
+    <link rel="stylesheet" href="style/progress_activity.css">
+    <link rel="stylesheet" href="style/scrolling.css">
+    <link rel="stylesheet" href="style/seekbars.css">
+    <link rel="stylesheet" href="style/tabs.css">
+    <link rel="stylesheet" href="style/toolbars.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="icons/styles/action_icons.css">
+    <link rel="stylesheet" href="icons/styles/media_icons.css">
+    <link rel="stylesheet" href="icons/styles/comms_icons.css">
+    <link rel="stylesheet" href="icons/styles/settings_icons.css">
+
+    <!-- Transitions -->
+    <link rel="stylesheet" href="transitions.css">
+
+    <!-- Util CSS: some extra tricks -->
+    <link rel="stylesheet" href="util.css">
+
+    <!-- Additional markup to make Building Blocks kind of cross browser -->
+    <!--link rel="stylesheet" href="cross_browser.css"-->
+    <link rel="stylesheet" href="style/app.css">
+    <title>La App del Godinez</title>
+
+    <style>
+      body {
+        border: 1px solid black;
+      }
+    </style>
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script src="ractive.js" defer></script>
+    <script src="bower_components/qwest/qwest.min.js" defer></script>
+    <script src="app.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <section role="region" id="index" data-position="current">
+      <header class="fixed">
+        <h1>Godin</h1>
+      </header>
+      <article class="content scrollable header">
+          <ul id="container">
+          </ul>
+      </article>
+    </section>
+
+     <script id='memeTemplate' type='text/ractive'>
+     {{#memes:i}}
+      <li>
+          <h2>{{memes[i].caption}}</h2>
+          <img class="meme" src="{{memes[i].images.normal}}" />
+      </li>
+      {{/memes}}
+      <button class="recommend" on-click="loadMore"><i data-icon="back-light"></i><span>Load More</span></button>
+     </script>
+  </body>
+
+</html>

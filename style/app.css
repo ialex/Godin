@@ -1,0 +1,10 @@
+.meme {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+h2 {
+  font-family: "FiraSans";
+  font-weight: 500;
+}
